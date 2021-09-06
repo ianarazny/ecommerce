@@ -139,3 +139,41 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+.input-box{
+    margin: 31px auto;
+    width: 80%;
+    border-bottom: 1px seashell;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.input-box input{
+    width: 90%;
+    border: black;
+    outline: black;
+    background: transparent;
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+::placeholder{
+  color: aliceblue;
+}
+
+.login-btn {
+  margin: 31px auto;
+  width: 80%;
+  border-bottom: 1px seashell;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  border-radius: 20px;
+}
+
+.login-btn input{
+  width: 90%;
+  border: black;
+  outline: black;
+  background: transparent;
+  color: white;
+}
