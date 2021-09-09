@@ -44,7 +44,6 @@
 
 //
 
-var category = {};
 
 function showImagesGallery(array){
 
@@ -65,21 +64,21 @@ function showImagesGallery(array){
     }
 }
 
-// function showRelatedProducts(arr) {
-//     let htmlContentToAppend = "";
+function showRelatedProducts(arr) {
+    let htmlContentToAppend = "";
 
-//     for(let i=0; i < arr.length; i++){
-//         let prodRel = arr[i];
+    for(let i=0; i < arr.length; i++){
+        let prodRel = arr[i];
 
-//         htmlContentToAppend += ` 
-//         <div class="">
-//                 <a href="`+ prodRel +`">
-//         </div>
-//         `
+        htmlContentToAppend += ` 
+        <div class="">
+                <a href="`+ prodRel +`">
+        </div>
+        `
 
-//         document.getElementById("productoRelacionado").innerHTML = htmlContentToAppend;
-//     }
-// }
+        document.getElementById("productoRelacionado").innerHTML = htmlContentToAppend;
+    }
+}
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
@@ -111,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             //Muestro las imagenes en forma de galería
             showImagesGallery(product.images);
             //Productos relacionados;
-            // showRelatedProducts(product.relatedProducts);
+            showRelatedProducts(product.relatedProducts);
         }
     });
 });
