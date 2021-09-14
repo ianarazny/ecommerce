@@ -23,7 +23,7 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html" id="persona">Usuario: </a>   
+      <a class="py-2 d-none d-md-inline-block" href="sell.html" id="persona">Usuario: </a>
     </div>
   </nav>
   <div class="container p-5">
@@ -31,53 +31,64 @@
   <main role="main">
 
     <div class="container mt-5">
-    <h3 id="categoryName"></h3>
-    <hr class="my-3">
-    <dl>
-      <dt>Descripción</dt>
-      <dd>
-        <p id="categoryDescription"></p>
-      </dd>
-      
-      <dt>Costo: </dt>
-      <dd>
-        <p id="productCost"></p>
-      </dd>
+      <h3 id="productName"></h3>
+      <hr class="my-3">
+      <dl>
+        <dt>Descripción</dt>
+        <dd>
+          <p id="productDescription"></p>
+        </dd>
 
-      <dt>Moneda: </dt>
-      <dd>
-        <p id="productCurrency"></p>
-      </dd>
+        <dt>Costo: </dt>
+        <dd>
+          <p id="productCost"></p>
+        </dd>
 
-      <dt>Número de vendidos: </dt>
-      <dd>
-        <p id="productsoldCount"></p>
-      </dd>
-      
-      <dt>Criterio para incluir productos en esta categoría</dt>
-      <dd>
-        <p id="productCriteria"></p>
-      </dd>
+        <dt>Moneda: </dt>
+        <dd>
+          <p id="productCurrency"></p>
+        </dd>
 
-      <dt>Categoría: </dt>
-      <dd>
-        <p id="productCategory"></p>
-      </dd>
+        <dt>Número de vendidos: </dt>
+        <dd>
+          <p id="productsoldCount"></p>
+        </dd>
 
-      <dt>Imágenes ilustrativas</dt>
-      <dd>
-        <div class="row text-center text-lg-left pt-2" id="carImagesGallery">
+        <dt>Categoría: </dt>
+        <dd>
+          <p id="productCategory"></p>
+        </dd>
+
+        <dt>Imágenes ilustrativas</dt>
+        <dd>
+          <div class="row text-center text-lg-left pt-2" id="carImagesGallery">
+          </div>
+        </dd>
+
+        <dt>Productos relacionados: </dt>
+        <dd>
+          <p id="productoRelacionado"></p>
+        </dd>
+        <p>Introduzca aquí sus comentarios sobre el producto</p>
+        <form>
+          <textarea name="userComment" rows=5 cols=40 maxlength="2000" minlength="5" style="overflow: hidden; overflow-wrap: break-word; height: 48px;">
+          </textarea>
+
+          <button type="submit" class="custom-radio" id="comentarioEnviado">
+            <span class="font-italic">
+              Comentar
+            </span>
+          </button>
+
+        </form>
+
+        <div class="list-group" id="commentSection">
         </div>
-      </dd>
 
-      <dt>Productos relacionados: </dt>
-      <dd>
-        <p id="productoRelacionado"></p>
-      </dd>
+      </dl>
+    </div>
 
-    </dl>
-    
-  </div>
+    </div>
   </main>
   <footer class="text-muted">
     <div class="container">

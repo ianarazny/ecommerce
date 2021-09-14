@@ -82,8 +82,6 @@ function sortAndShowProducts(sortCriteria, prodArray){
     showProductsList();
 }
 
-//Lo que hace el href es direccionar a la sección de categorías de autos, esto no es correcto pues debería redireccionar al producto y sus opciones de compra,
-//Utilidad que aún no hemos implementado.
 document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(PRODUCTS_URL).then( //Accedo a la lista de productos con una petición al servidor.
         function (resultObj){
