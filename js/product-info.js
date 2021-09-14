@@ -1,4 +1,3 @@
-let comment = [];
 
 function showImagesGallery(array) {
 
