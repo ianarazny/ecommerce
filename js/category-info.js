@@ -1,4 +1,3 @@
-var category = {};
 
 function showImagesGallery(array){
 
@@ -43,3 +42,4 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
     });
 });
+var comentarioDeUsuario = document.getElementById('comentario').value;

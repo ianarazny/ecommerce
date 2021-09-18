@@ -1,6 +1,4 @@
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
+
 const ORDER_ASC_BY_COST = "Costo crec.";
 const ORDER_DESC_BY_COST = "Costo decr.";
 const ORDER_BY_REL = "Relevancia";
