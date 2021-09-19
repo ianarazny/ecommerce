@@ -88,7 +88,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
     )
 
     document.getElementById("comentarioEnviado").addEventListener("click", function (e) {
-        alert("Gracias por su comentario!"); 
-        
+
+        alert("Gracias por su comentario!");
+
     })
 });
