@@ -1,4 +1,4 @@
-
+//Creo una función que recorra el array de manera que le asigne a cada imágen un lugar correcto en el html
 function showImagesGallery(array) {
 
     let htmlContentToAppend = "";
@@ -18,7 +18,7 @@ function showImagesGallery(array) {
     }
 }
 
-
+//Declaro la función que recorrerá el array de manera que pueda mostrar los comentarios
 function showComments(arreglo) {
     let htmlContentToAppend = "";
 
@@ -46,15 +46,13 @@ function showComments(arreglo) {
 
 
 
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(PRODUCT_INFO_URL).then(
         function (resultObj) {
             if (resultObj.status === "ok") {
                 product = resultObj.data;
 
+                //Corroboro que la petición esté realizada de manera correcta.
                 console.log("Entré al if");
 
                 let productName = document.getElementById("productName");
@@ -72,13 +70,15 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 productCategory.innerHTML = product.category;
 
 
-                //Muestro las imagenes en forma de galería
+                //Invoco a la función que mostrará las imágenes de los autos
                 showImagesGallery(product.images);
             }
         });
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(
         function (comentarios) {
             if (comentarios.status === "ok") {
+
+                //Nuevamente corrobor que la petición esté realizada de manera correcta.
                 console.log("Hice la petición?");
 
                 var product_comment = comentarios.data;
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     )
 
     document.getElementById("comentarioEnviado").addEventListener("click", function (e) {
-
-        alert("Gracias por su comentario!");
+        alert("Gracias por su comentario!"); 
+        
     })
 });
