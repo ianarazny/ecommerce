@@ -44,6 +44,21 @@ function showComments(arreglo) {
     }
 }
 
+//Le asigno a cada elemento del array de info_products 
+// un producto 
+function relatedProductos(arreglo1) {
+    //El arreglo1 va a ser el que recorra de la url de products según 
+    //los elementos del array de relatedProducts en info_products.
+    let htmlContentToAppend = "";
+    for (let k = 0; k < arreglo1.length; k++) {
+        let = arreglo1[k];
+        htmlContentToAppend += `
+        
+        `
+
+        document.getElementById("relatedProducts").innerHTML = htmlContentToAppend;
+    }
+}
 
 
 document.addEventListener("DOMContentLoaded", function (e) {
@@ -72,6 +87,15 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
                 //Invoco a la función que mostrará las imágenes de los autos
                 showImagesGallery(product.images);
+
+                getJSONData(PRODUCTS_URL).then(
+                    function (otrosProductos) {
+                        if (otrosProductos.status === "ok") {
+                            var llamandoProductos = otrosProductos.data;
+                            llamandoProductos[relatedProductos(product)];
+                        }
+                    }
+                )
             }
         });
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(
@@ -91,5 +115,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
         alert("Gracias por su comentario!");
 
-    })
+    });
+    //Llamo la información de la URL de productos.
+
 });

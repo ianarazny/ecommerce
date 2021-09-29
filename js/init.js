@@ -44,9 +44,15 @@ let usuario = JSON.parse(localStorage.getItem("Usuario"));
 var referencia = document.getElementById("persona");
 referencia.innerHTML += usuario[0].aEmail;
 
+function deslog() {
+  window.location.href="login.html";
+}
+
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
+  document.getElementById("deslog").addEventListener("click", deslog);
 });
 
