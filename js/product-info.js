@@ -65,18 +65,15 @@ function showProducts(arreglo) {
 
             <small class="text-muted">Número de vendidos: ` + producto.soldCount + ` </small>
             </div>
-            
                 <p>Descripción: `+ producto.description + `</p>
                 <p>Costo: ` + producto.cost + ` </p>
                 <p>Moneda: `+ producto.currency + `</p>
-               
             </div>
 
         </div>
     </div>  </a>
     `
     }
-
     document.getElementById("productosRelacionados").innerHTML = htmlContentToAppend;
 }
 
@@ -127,6 +124,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                             }
                             showProducts(arreglo);
                             // le tengo que pasar la posicion de los productos relacionados
+                            // Entonces cargo un arreglo con la información de las posiciones indicadas en el arreglo de relatedProducts
                             console.log("Entrado");
 
                         };
