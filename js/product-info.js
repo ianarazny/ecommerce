@@ -45,25 +45,6 @@ function showComments(arreglo) {
     document.getElementById("commentSection").innerHTML = htmlContentToAppend;
 }
 
-
-
-//Le asigno a cada elemento del array de info_products 
-// un producto 
-
-// function relatedProductos(arreglo1) {
-//     //El arreglo1 va a ser el que recorra de la url de products según 
-//     //los elementos del array de relatedProducts en info_products.
-//     let htmlContentToAppend = "";
-//     for (let k = 0; k < arreglo1.length; k++) {
-//         let = arreglo1[k];
-//         htmlContentToAppend += `
-
-//         `
-
-//         document.getElementById("relatedProducts").innerHTML = htmlContentToAppend;
-//     }
-// }
-
 function showProducts(arreglo) {
     let htmlContentToAppend = "";
 
@@ -140,19 +121,18 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 getJSONData(PRODUCTS_URL).then(
                     function (otrosProductos) {
                         if (otrosProductos.status === "ok") {
-                            llamandoProductos = otrosProductos.data;
                             let arreglo = [];
-                            for(let i=0; i<product.relatedProducts.length; i++){
-                                arreglo.push(llamandoProductos[product.relatedProducts[i]]);
+                            for (let i = 0; i < product.relatedProducts.length; i++) {
+                                arreglo.push(otrosProductos.data[product.relatedProducts[i]]);
                             }
                             showProducts(arreglo);
                             // le tengo que pasar la posicion de los productos relacionados
                             console.log("Entrado");
 
-                        }
+                        };
                     }
                 );
-            }
+            };
         }
     );
 
