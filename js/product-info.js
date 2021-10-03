@@ -40,28 +40,75 @@ function showComments(arreglo) {
         </div>
     </div>  
     `
-        document.getElementById("commentSection").innerHTML = htmlContentToAppend;
     }
+
+    document.getElementById("commentSection").innerHTML = htmlContentToAppend;
 }
+
+
 
 //Le asigno a cada elemento del array de info_products 
 // un producto 
-function relatedProductos(arreglo1) {
-    //El arreglo1 va a ser el que recorra de la url de products según 
-    //los elementos del array de relatedProducts en info_products.
-    let htmlContentToAppend = "";
-    for (let k = 0; k < arreglo1.length; k++) {
-        let = arreglo1[k];
-        htmlContentToAppend += `
-        
-        `
 
-        document.getElementById("relatedProducts").innerHTML = htmlContentToAppend;
+// function relatedProductos(arreglo1) {
+//     //El arreglo1 va a ser el que recorra de la url de products según 
+//     //los elementos del array de relatedProducts en info_products.
+//     let htmlContentToAppend = "";
+//     for (let k = 0; k < arreglo1.length; k++) {
+//         let = arreglo1[k];
+//         htmlContentToAppend += `
+
+//         `
+
+//         document.getElementById("relatedProducts").innerHTML = htmlContentToAppend;
+//     }
+// }
+
+function showProducts(arreglo) {
+    let htmlContentToAppend = "";
+
+    for (let i = 0; i < arreglo.length; i++) {
+
+        let producto = arreglo[i];
+
+        htmlContentToAppend += `
+        <a href="product-info.html" class="list-group-item list-group-item-action">
+    <div class="list-group-item list-group-item-action"> 
+        <div class="row">
+            <div class="col-3">
+                <p>Nombre: `+ producto.name + `</p>            
+                <img src="` + producto.imgSrc + `" class="img-thumbnail"> 
+            </div>  
+            <div class="col-6">
+            <div class="d-flex w-100 justify-content-between">            
+
+            <small class="text-muted">Número de vendidos: ` + producto.soldCount + ` </small>
+            </div>
+            
+                <p>Descripción: `+ producto.description + `</p>
+                <p>Costo: ` + producto.cost + ` </p>
+                <p>Moneda: `+ producto.currency + `</p>
+               
+            </div>
+
+        </div>
+    </div>  </a>
+    `
     }
+
+    document.getElementById("productosRelacionados").innerHTML = htmlContentToAppend;
 }
 
 
+
 document.addEventListener("DOMContentLoaded", function (e) {
+
+    // const promesas = async () => {
+    //     const productInfo = await getJSONData(PRODUCT_INFO_URL);
+
+    //     const productos = await getJSONData(PRODUCTS_URL);
+    // }
+
     getJSONData(PRODUCT_INFO_URL).then(
         function (resultObj) {
             if (resultObj.status === "ok") {
@@ -77,6 +124,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 let productCount = document.getElementById("productsoldCount");
                 let productCategory = document.getElementById("productCategory");
 
+                arregloDeProductosRelacionados = product.relatedProducts;
                 productName.innerHTML = product.name;
                 productDescription.innerHTML = product.description;
                 productCost.innerHTML = product.cost;
@@ -88,16 +136,27 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 //Invoco a la función que mostrará las imágenes de los autos
                 showImagesGallery(product.images);
 
+
                 getJSONData(PRODUCTS_URL).then(
                     function (otrosProductos) {
                         if (otrosProductos.status === "ok") {
-                            var llamandoProductos = otrosProductos.data;
-                            llamandoProductos[relatedProductos(product)];
+                            llamandoProductos = otrosProductos.data;
+                            let arreglo = [];
+                            for(let i=0; i<product.relatedProducts.length; i++){
+                                arreglo.push(llamandoProductos[product.relatedProducts[i]]);
+                            }
+                            showProducts(arreglo);
+                            // le tengo que pasar la posicion de los productos relacionados
+                            console.log("Entrado");
+
                         }
                     }
-                )
+                );
             }
-        });
+        }
+    );
+
+
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(
         function (comentarios) {
             if (comentarios.status === "ok") {
@@ -109,7 +168,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 showComments(product_comment);
             }
         }
-    )
+    );
+
+
 
     document.getElementById("comentarioEnviado").addEventListener("click", function (e) {
 
