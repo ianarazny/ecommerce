@@ -1,6 +1,85 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-document.addEventListener("DOMContentLoaded", function(e){
+function showCart(arreglo) {
+    let htmlContentToAppend = "";
+    for (let i = 0; i < arreglo.length; i++) {
+        let carrito = arreglo[i];
 
+        htmlContentToAppend += `
+            <div class="list-group-item list-group-item-action">
+                <div class="row">
+                        <div class="col-3">
+                            <img src=" ${carrito.src} " class="img-thumbnail">
+                        </div>
+                        <div class="col">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h4 class="mb-1"> ${carrito.name} </h4>
+                            </div>
+                            
+                            <p class="mb-1">Costo: ${carrito.unitCost}</p>
+                            <p class="mb-1">Moneda: ${carrito.currency}</p>
+                        </div>
+                </div>
+                 <div>
+              <ul>
+                <li>
+                <input type="submit" class="btn" value="Eliminar">
+                </li>                
+                <li>
+                <input type="submit" class="btn" value="Comprar ahora">
+                </li>
+                <li>
+                <a href="#">Productos relacionados</a>
+                </li>
+              </ul>
+                </div>        
+
+                <div id="subtotales"></div>
+                <p class="mb-1">Subtotal de este producto: </p>      
+                <p> ${carrito.unitCost * carrito.count}</p>
+                    
+             </div >
+        `
+    }
+    document.getElementById("carrito").innerHTML = htmlContentToAppend;
+}
+
+
+function agregarALaTabla(arr) {
+    let htmlContentToAppend = "";
+    for (let i = 0; i < arr.length; i++) {
+        let carrito = arr[i];
+
+        htmlContentToAppend += `
+        <tr>
+            <th scope="row"></th>
+            <td>${carrito.name}</td>
+            <td><input class="form-control" type="number" min="1" id="cantidad" name="cantidad" value="${carrito.count}" onchange="cambioAsinc(${carrito.unitCost})"></td>
+            <td id="subtotal">${carrito.unitCost * carrito.count}</td>
+        </tr>
+        `
+    }
+    document.getElementById("losObjetos").innerHTML = htmlContentToAppend;
+}
+
+function cambioAsinc(precio) {
+
+    document.getElementById('subtotal').innerHTML = document.getElementById('cantidad').value * precio;
+}
+
+document.addEventListener("DOMContentLoaded", function (e) {
+
+    getJSONData(CART_INFO_URL).then(
+        function (resultObj) {
+            if (resultObj.status === "ok") {
+                carro = resultObj.data;
+
+                showCart(carro.articles);
+                agregarALaTabla(carro.articles);
+            }
+        }
+    )
 });
+
+
