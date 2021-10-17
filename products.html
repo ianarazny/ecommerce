@@ -36,57 +36,65 @@
 
     </div>
   </nav>
-  <div class="container">
-    <div class="row">
-      <div class="col text-right">
-        <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
-          <label class="btn btn-light active" id="sortAsc">
-            <input type="radio" name="options" autocomplete="off" checked><i
-              class="fas fa-sort-amount-up mr-1"></i>Costo crec.
-          </label>
-          <label class="btn btn-light" id="sortDesc">
-            <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Costo
-            decr.
-          </label>
-          <label class="btn btn-light" id="sortByRel">
-            <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Relevancia
-          </label>
+  <main role="main" class="pb-5">
+    <div class="text-center p-4">
+      <h2>Productos</h2>
+      <p class="lead">Categoría: Autos.</p>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col text-right">
+          <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+            <label class="btn btn-light active" id="sortAsc">
+              <input type="radio" name="options" autocomplete="off" checked><i
+                class="fas fa-sort-amount-up mr-1"></i>Costo crec.
+            </label>
+            <label class="btn btn-light" id="sortDesc">
+              <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Costo
+              decr.
+            </label>
+            <label class="btn btn-light" id="sortByRel">
+              <input type="radio" name="options" autocomplete="off"><i
+                class="fas fa-sort-amount-down mr-1"></i>Relevancia
+            </label>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row justify-content-end">
-      <div class="col-md-6"></div>
-      <div class="col-md-6 col-sm-12 mb-1 container">
-        <div class="row container p-0 m-0">
-          <div class="col">
-            <p class="font-weight-normal text-right my-2">Costo</p>
-          </div>
-          <div class="col">
-            <input class="form-control" type="number" placeholder="min." id="rangeFilterCostMin">
-          </div>
-          <div class="col">
-            <input class="form-control" type="number" placeholder="máx." id="rangeFilterCostMax">
-          </div>
-          <div class="col-3 p-0">
-            <div class="btn-group" role="group">
-              <button class="btn btn-light btn-block" id="rangeFilterCost">Filtrar</button>
-              <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
+      <div class="row justify-content-end">
+        <div class="col-md-6"></div>
+        <div class="col-md-6 col-sm-12 mb-1 container">
+          <div class="row container p-0 m-0">
+            <div class="col">
+              <p class="font-weight-normal text-right my-2">Costo</p>
+            </div>
+            <div class="col">
+              <input class="form-control" type="number" placeholder="min." id="rangeFilterCostMin">
+            </div>
+            <div class="col">
+              <input class="form-control" type="number" placeholder="máx." id="rangeFilterCostMax">
+            </div>
+            <div class="col-3 p-0">
+              <div class="btn-group" role="group">
+                <button class="btn btn-light btn-block" id="rangeFilterCost">Filtrar</button>
+                <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="list-group" id="prod-list-container">
+      <div class="row">
+        <div class="list-group" id="prod-list-container">
+        </div>
       </div>
     </div>
-  </div>
-  <div class="container p-5">
-    <div class="row">
-      <div class="list-group" id="prod-list-container">
+    <div class="container p-5">
+      <div class="row">
+        <div class="list-group" id="prod-list-container">
+        </div>
       </div>
     </div>
-  </div>
+  </main>
   <footer class="text-muted bg-light">
     <div class="container">
       <p class="float-right">
