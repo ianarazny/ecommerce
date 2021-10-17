@@ -35,10 +35,12 @@ function showCart(arreglo) {
               </ul>
                 </div>        
 
-                <div id="subtotales"></div>
-                <p class="mb-1">Subtotal de este producto: </p>      
+                <div id="subtotales"></div>               
+                <p class="mb-1">Cantidad pre-seleccionada: </p>
+                <p> ${carrito.count}</p>
+                <p class="mb-1">Subtotal de este producto según cantidad pre-seleccionada: </p>      
                 <p> ${carrito.unitCost * carrito.count}</p>
-                    
+
              </div >
         `
     }
