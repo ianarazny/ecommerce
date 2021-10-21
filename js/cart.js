@@ -1,6 +1,10 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
+"use: strict";
+
+
+
 function showCart(arreglo) {
     let htmlContentToAppend = "";
     for (let i = 0; i < arreglo.length; i++) {
@@ -68,6 +72,7 @@ function agregarALaTabla(arr) {
 function cambioAsinc(precio) {
 
     document.getElementById('subtotal').innerHTML = document.getElementById('cantidad').value * precio;
+    document.getElementById('total').innerText = `Total:  ` + document.getElementById('cantidad').value * precio;
 }
 
 document.addEventListener("DOMContentLoaded", function (e) {
@@ -76,6 +81,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
         function (resultObj) {
             if (resultObj.status === "ok") {
                 carro = resultObj.data;
+
+                document.getElementById('total').innerHTML += `${carro.articles[0].unitCost * carro.articles[0].count} `;
 
                 showCart(carro.articles);
                 agregarALaTabla(carro.articles);
