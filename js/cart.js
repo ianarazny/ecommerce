@@ -21,23 +21,11 @@ function showCart(arreglo) {
                                 <h4 class="mb-1"> ${carrito.name} </h4>
                             </div>
                             
-                            <p class="mb-1">Costo: ${carrito.unitCost}</p>
+                            <p class="mb-1">Costo de la unidad: ${carrito.unitCost}</p>
                             <p class="mb-1">Moneda: ${carrito.currency}</p>
                         </div>
                 </div>
-                 <div>
-              <ul>
-                <li>
-                <input type="submit" class="btn" value="Eliminar">
-                </li>                
-                <li>
-                <input type="submit" class="btn" value="Comprar ahora">
-                </li>
-                <li>
-                <a href="#">Productos relacionados</a>
-                </li>
-              </ul>
-                </div>        
+                 <div>     
 
                 <div id="subtotales"></div>               
                 <p class="mb-1">Cantidad pre-seleccionada: </p>
@@ -45,7 +33,38 @@ function showCart(arreglo) {
                 <p class="mb-1">Subtotal de este producto según cantidad pre-seleccionada: </p>      
                 <p> ${carrito.unitCost * carrito.count}</p>
 
-             </div >
+
+            <div class="d-block my-3">
+            <h5>Tipo de envío:</h5>
+            <div class="custom-control custom-radio">
+              <input id="express" name="publicationType" type="radio" class="custom-control-input" checked=""
+                required="">
+              <label class="custom-control-label" for="express">Premium (2-5 días) - Costo del 15% sobre el subtotal.</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input id="comun" name="publicationType" type="radio" class="custom-control-input" required="">
+              <label class="custom-control-label" for="comun">Express (5-8 días) - Costo del 7% sobre el subtotal.</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input id="standardradio" name="publicationType" type="radio" class="custom-control-input" required="">
+              <label class="custom-control-label" for="standardradio">Standard (12 a 15 días) - Costo del 5% sobre el subtotal.</label>
+            </div>
+          </div>
+             </div>
+
+                <ul>
+                <li>
+                <input type="submit" class="btn" value="Eliminar">
+                </li>
+                <li>
+                <input type="submit" class="btn" value="Comprar ahora">
+                </li>
+                <li>
+                <input type="submit" class="btn" value="Método de pago">
+                </li>
+              </ul>
+                </div>
+             
         `
     }
     document.getElementById("carrito").innerHTML = htmlContentToAppend;
