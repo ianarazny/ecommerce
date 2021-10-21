@@ -41,8 +41,7 @@ function actualizarCard() {
 
         console.log(JSON.parse(localStorage.getItem('perfil')));
         console.log(infoUsuario[0].user);
-        console.log(infoUsuario[0].numberOfUser)
-
+        console.log(infoUsuario[0].numberOfUser);
     }
 }
 
