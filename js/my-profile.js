@@ -27,16 +27,15 @@ function actualizarCard() {
         let infoUsuario = JSON.parse(localStorage.getItem('perfil'));
 
         var nombre = document.getElementById('nameOfUser');
-        nombre.innerHTML += infoUsuario[0].user;
+        nombre.innerHTML += infoUsuario[0].user + ` ` + infoUsuario[0].surnameUser;
 
-        var apellido = document.getElementById('surnameOfUser');
-        apellido.innerHTML += infoUsuario[0].surnameUser;
+
 
         var mail = document.getElementById('inputEmail');
         mail.innerHTML += infoUsuario[0].emailUser;
 
         var numero = document.getElementById('telefono');
-        numero.innerHTML += infoUsuario[0].numberOfUser;
+        numero.innerHTML += `Número:  ` + infoUsuario[0].numberOfUser;
 
 
 
