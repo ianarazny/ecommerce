@@ -24,5 +24,4 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("signin").addEventListener("click", login); //Luego de clickear en login, se almacena la info.
 
 });
-console.log(localStorage);
 

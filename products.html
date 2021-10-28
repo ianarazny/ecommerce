@@ -115,6 +115,12 @@
       <div></div>
     </div>
   </div>
+  <script>
+    if (!localStorage.getItem("Usuario")) { // Si no hay data en el localStorage
+      window.location.href = "login.html"; //Redireccionar al login.html
+      console.log("¿Entré al if?");
+    }
+  </script>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
