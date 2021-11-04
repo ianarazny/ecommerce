@@ -32,7 +32,7 @@ function actualizarCard() {
         }
         else {
             var nombre = document.getElementById('nameOfUser');
-            nombre.innerHTML += infoUsuario[0].user + ` ` + infoUsuario[0].surnameUser;
+            nombre.innerHTML += + ` ` + infoUsuario[0].surnameUser;
 
 
 

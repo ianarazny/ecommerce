@@ -54,6 +54,8 @@
 
     </div>
   </nav>
+
+
   <div class="container p-5">
     <h2>Carrito</h2>
     <div id="carrito">
@@ -75,7 +77,50 @@
       <h5 id="total">Total:</h5>
     </div>
 
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cartModal">
+      Comprar ahora!
+    </button>
+
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel">Método de Pago</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <label for="nameOfBuyer">Ingrese su nombre completo</label>
+            <input type="text" id="nameOfBuyer" class="form-control" placeholder="Nombre completo">
+
+            <br>
+
+            <input type="radio" name="payment" value="Visa" id="visa" />Visa &nbsp;
+            <input type="radio" name="payment" value="Master Card" />Master Card &nbsp;
+            <input type="radio" name="payment" value="American Express" />Brou &nbsp;
+            <input type="radio" name="payment" value="Discover" />Santander <br><br>
+
+            <label id="cardNum">Número de tarjeta:</label>
+            <input type="text" name="cardNumber" id="cardNum" size="30" value="" class="form-control"
+              onblur="ValidateCreditCardNumber()" />
+
+            <label for="expirationOfCard">Fecha de vencimiento de la tarjeta: </label>
+            <input type="number" id="expirationOfCard" class="form-control" placeholder="dd/mm/aa">
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Seguir comprando</button>
+            <button type="button" class="btn btn-primary" id="transaction">Proseguir con esta compra</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+
 
   <div id="spinner-wrapper">
     <div class="lds-ring">

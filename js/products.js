@@ -55,7 +55,6 @@ function showProductsList() {
                             </div>
                         </a>
                     </div>
-                    
                 `
         }
         document.getElementById("prod-list-container").innerHTML = htmlContentToAppend;
