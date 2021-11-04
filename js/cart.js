@@ -5,7 +5,7 @@
 
 
 let comissionPercentage = 0.15;
-let productCost = 0;
+let costXcount = 0;
 
 function showCart(arreglo) {
     let htmlContentToAppend = "";
@@ -127,8 +127,19 @@ function ValidateCreditCardNumber() {
         alert("Por favor, revise que todos los datos sean correctos.");
     }
 }
+function validation() {
+
+    let name = document.getElementById('nameOfBuyer');
+    let expiration = document.getElementById('expirationOfCard');
+
+    if (!name.value || !expiration.value) {
+        alert('Por favor, revise que todos los datos sean correctos.')
+        console.log(name.value);
+    }
+}
 
 document.addEventListener("DOMContentLoaded", function (e) {
+
 
 
     getJSONData(CART_INFO_URL).then(
@@ -144,24 +155,19 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
                 let arr = []
                 arr = carro.articles;
-
-
-                document.getElementById("cantidad").addEventListener("change", function () {
-                    for (let i = 0; i < arr.length; i++) {
-                        productCount = carro.articles[i].unitCost;
-                        cambioAsinc(carro.articles[i].unitCost);
-                    }
-                });
+                //Esto lo hago por si tuviese más de un objeto en el array
 
                 document.getElementById("cantidad").addEventListener("change", function () {
+                    //Cuando cambie la info del input quiero actualizar la cte productCost 
                     for (let i = 0; i < arr.length; i++) {
-                        productCost = carro.articles[i].unitCost;
+                        costXcount = carro.articles[i].unitCost;
                         cambioAsinc(carro.articles[i].unitCost);
                     }
                 });
 
                 document.getElementById("premiumRadio").addEventListener("change", function () {
                     for (let i = 0; i < arr.length; i++) {
+                        //Si clickeo en este botón, actualizo el porcentaje y ejecuto la función
                         comissionPercentage = 0.15;
                         cambioAsinc(carro.articles[i].unitCost);
                     }
@@ -180,8 +186,11 @@ document.addEventListener("DOMContentLoaded", function (e) {
                         cambioAsinc(carro.articles[i].unitCost);
                     }
                 });
+                for (let i = 0; i < arr.length; i++) {
+                    cambioAsinc(carro.articles[i].unitCost);
+                }
 
-                cambioAsinc(carro.articles[0].unitCost);
+                document.getElementById("buy").addEventListener("click", validation());
 
             }
         }

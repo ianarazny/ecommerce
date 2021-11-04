@@ -92,28 +92,28 @@
           </div>
           <div class="modal-body">
             <label for="nameOfBuyer">Ingrese su nombre completo</label>
-            <input type="text" id="nameOfBuyer" class="form-control" placeholder="Nombre completo">
+            <input required type="text" id="nameOfBuyer" placeholder="Nombre completo">
 
             <br>
-
-            <input type="radio" name="payment" value="Visa" id="visa" />Visa &nbsp;
-            <input type="radio" name="payment" value="Master Card" />Master Card &nbsp;
-            <input type="radio" name="payment" value="American Express" />Brou &nbsp;
-            <input type="radio" name="payment" value="Discover" />Santander <br><br>
+            <label>Compañía de la tarjeta: </label><br>
+            <input type="radio" name="payment" value="Visa" id="visa">Visa &nbsp;
+            <input type="radio" name="payment" value="Master Card">Master Card &nbsp;
+            <input type="radio" name="payment" value="American Express">Brou &nbsp;
+            <input type="radio" name="payment" value="Discover">Santander <br><br>
 
             <label id="cardNum">Número de tarjeta:</label>
-            <input type="text" name="cardNumber" id="cardNum" size="30" value="" class="form-control"
-              onblur="ValidateCreditCardNumber()" />
+            <input required type="text" name="cardNumber" id="cardNum" size="30" value=""
+              onblur="ValidateCreditCardNumber()">
 
             <label for="expirationOfCard">Fecha de vencimiento de la tarjeta: </label>
-            <input type="number" id="expirationOfCard" class="form-control" placeholder="dd/mm/aa">
-
-
+            <input required type="number" min="0" id="expirationOfCard" placeholder="ddmmaa">
           </div>
+
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Seguir comprando</button>
-            <button type="button" class="btn btn-primary" id="transaction">Proseguir con esta compra</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Volver al carrito</button>
+            <button type="button" class="btn btn-primary" id="buy">Proseguir con esta compra</button>
           </div>
+
         </div>
       </div>
     </div>
