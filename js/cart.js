@@ -87,20 +87,6 @@ function agregarALaTabla(arr) {
 }
 
 function cambioAsinc(precio) {
-    // const tipoDeEnvio = document.getElementById('');
-    // const cantidad = document.getElementById('cantidad').value;
-    // if (tipoDeEnvio === premium) {
-    //     document.getElementById('subtotal').innerHTML = cantidad * precio;
-    //     document.getElementById('total').innerText = `Total:  ` + cantidad * precio + ((cantidad * precio * 3) / 20);
-    // }
-    // if (tipoDeEnvio === Express) {
-    //     document.getElementById('subtotal').innerHTML = cantidad * precio;
-    //     document.getElementById('total').innerText = `Total:  ` + cantidad * precio + ((cantidad * precio * 7) / 100);
-    // }
-    // if (tipoDeEnvio === Standrard) {
-    //     document.getElementById('subtotal').innerHTML = cantidad * precio;
-    //     document.getElementById('total').innerText = `Total:  ` + cantidad * precio + ((cantidad * precio) / 20);
-    // }
 
     let unitProductCostHTML = document.getElementById("subtotal");
     let totalCostHTML = document.getElementById("total");
@@ -112,8 +98,7 @@ function cambioAsinc(precio) {
     unitProductCostHTML.innerHTML = costXcount;
     totalCostHTML.innerHTML = `Total:` + totalCostToShow;
 
-    // document.getElementById('subtotal').innerHTML = document.getElementById('cantidad').value * precio;
-    // document.getElementById('total').innerText = `Total:  ` + document.getElementById('cantidad').value * precio;
+
 }
 
 
