@@ -105,31 +105,31 @@ function cambioAsinc(precio) {
 }
 
 
-function ValidateCreditCardNumber() {
+// function ValidateCreditCardNumber() {
 
-    var ccNum = document.getElementById("cardNum").value;
-    var visaRegEx = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
-    var mastercardRegEx = /^(?:5[1-5][0-9]{14})$/;
-    var santanderRegEx = /^(?:3[47][0-9]{13})$/;
-    var brouRegEx = /^(?:6(?:011|5[0-9][0-9])[0-9]{12})$/;
-    var isValid = false;
+//     var ccNum = document.getElementById("cardNum").value;
+//     var visaRegEx = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
+//     var mastercardRegEx = /^(?:5[1-5][0-9]{14})$/;
+//     var santanderRegEx = /^(?:3[47][0-9]{13})$/;
+//     var brouRegEx = /^(?:6(?:011|5[0-9][0-9])[0-9]{12})$/;
+//     var isValid = false;
 
-    if (visaRegEx.test(ccNum)) {
-        isValid = true;
-    } else if (mastercardRegEx.test(ccNum)) {
-        isValid = true;
-    } else if (santanderRegEx.test(ccNum)) {
-        isValid = true;
-    } else if (brouRegEx.test(ccNum)) {
-        isValid = true;
-    }
+//     if (visaRegEx.test(ccNum)) {
+//         isValid = true;
+//     } else if (mastercardRegEx.test(ccNum)) {
+//         isValid = true;
+//     } else if (santanderRegEx.test(ccNum)) {
+//         isValid = true;
+//     } else if (brouRegEx.test(ccNum)) {
+//         isValid = true;
+//     }
 
-    if (isValid) {
-        alert("Gracias por su compra");
-    } else {
-        alert("Por favor, revise que los datos de su tarjeta sean correctos.");
-    }
-}
+//     if (isValid) {
+//         alert("Gracias por su compra");
+//     } else {
+//         alert("Por favor, revise que los datos de su tarjeta sean correctos.");
+//     }
+// }
 
 function creditForm() {
     let creditForm = document.getElementById('addCreditForm');
@@ -188,7 +188,7 @@ function validation() {
     else if (!address.value) {
         alert('Por favor, corrobore haber puesto la dirección completa y correctamente');
     }
-    else if (!cardNum) {
+    else if (!cardNum.value) {
         alert('Por favor, corrobore haber puesto el método de pago y número correspondiente')
     }
 
