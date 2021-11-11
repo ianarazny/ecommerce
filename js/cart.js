@@ -95,8 +95,8 @@ function cambioAsinc(precio) {
     let costXcount = precio * quantity.value;
     let totalCostToShow = (Math.round(costXcount * comissionPercentage * 100) / 100) + costXcount;
 
-    unitProductCostHTML.innerHTML = costXcount;
-    totalCostHTML.innerHTML = `Total:` + totalCostToShow;
+    unitProductCostHTML.innerHTML = `$U ` + costXcount;
+    totalCostHTML.innerHTML = `Total:` + `$U ` + totalCostToShow;
 
 
 }
@@ -124,19 +124,76 @@ function ValidateCreditCardNumber() {
     if (isValid) {
         alert("Gracias por su compra");
     } else {
-        alert("Por favor, revise que todos los datos sean correctos.");
+        alert("Por favor, revise que los datos de su tarjeta sean correctos.");
     }
 }
+
+function creditForm() {
+    let creditForm = document.getElementById('addCreditForm');
+    let transactionForm = document.getElementById('addTransactionForm');
+
+    let htmlContentToAppend = "";
+    htmlContentToAppend += `
+
+              <label>Compañía de la tarjeta: </label><br>
+              <input type="radio" name="payment" value="Visa" id="visa" checked="">Visa &nbsp;
+              <input type="radio" name="payment" value="Master Card" required="">Master Card &nbsp;
+              <input type="radio" name="payment" value="American Express" required="">Brou &nbsp;
+              <input type="radio" name="payment" value="Discover" required="">Santander <br><br>
+
+              <label id="cardNum">Número de tarjeta:</label>
+              <input type="number" min="0" name="cardNumber" id="cardNum" size="30" placeholder="Ingrese número de tarjeta."
+                onchange=ValidateCreditCardNumber() required>
+
+              <label for="start">Fecha de vencimiento de la tarjeta: </label>
+
+              <input type="date" id="start" name="trip-start" value="2021-11-11" min="2021-11-11" max="2025-12-31">
+    `
+    creditForm.innerHTML = htmlContentToAppend;
+    transactionForm.innerHTML = "";
+
+}
+
+function transForm() {
+    let creditForm = document.getElementById('addCreditForm');
+    let transactionForm = document.getElementById('addTransactionForm');
+
+    let htmlContentToAppend = "";
+    htmlContentToAppend += `
+
+    <label for="cardNum">Numero de cuenta:</label>
+    <input type="number" class="form-control" id="cardNum" placeholder="Ingrese numero de cuenta" required>
+    <div class="invalid-feedback">Por favor, complete este campo</div>
+    
+    `
+    creditForm.innerHTML = "";
+    transactionForm.innerHTML = htmlContentToAppend;
+
+}
+
+
 function validation() {
 
     let name = document.getElementById('nameOfBuyer');
-    let expiration = document.getElementById('expirationOfCard');
+    let address = document.getElementById('inputAddress');
+    let cardNum = document.getElementById('cardNum');
 
-    if (!name.value || !expiration.value) {
-        alert('Por favor, revise que todos los datos sean correctos.')
-        console.log(name.value);
+    if (!name.value) {
+        alert('Por favor, corrobore haber puesto su nombre');
+        $('.alert').alert()
+    }
+    else if (!address.value) {
+        alert('Por favor, corrobore haber puesto la dirección completa y correctamente');
+    }
+    else if (!cardNum) {
+        alert('Por favor, corrobore haber puesto el método de pago y número correspondiente')
+    }
+
+    else {
+        alert('Gracias por su compra =)')
     }
 }
+
 
 document.addEventListener("DOMContentLoaded", function (e) {
 
@@ -189,8 +246,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 for (let i = 0; i < arr.length; i++) {
                     cambioAsinc(carro.articles[i].unitCost);
                 }
-
-                document.getElementById("buy").addEventListener("click", validation());
 
             }
         }

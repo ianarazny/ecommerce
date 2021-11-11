@@ -91,56 +91,80 @@
             </button>
           </div>
           <div class="modal-body">
-            <label for="nameOfBuyer">Ingrese su nombre completo</label>
-            <input required type="text" id="nameOfBuyer" placeholder="Nombre completo">
 
-            <br>
-            <label>Compañía de la tarjeta: </label><br>
-            <input type="radio" name="payment" value="Visa" id="visa">Visa &nbsp;
-            <input type="radio" name="payment" value="Master Card">Master Card &nbsp;
-            <input type="radio" name="payment" value="American Express">Brou &nbsp;
-            <input type="radio" name="payment" value="Discover">Santander <br><br>
+            <div class="modal-body">
 
-            <label id="cardNum">Número de tarjeta:</label>
-            <input required type="text" name="cardNumber" id="cardNum" size="30" value=""
-              onblur="ValidateCreditCardNumber()">
+              <form>
+                <div class="form-group">
+                  <label for="nameOfBuyer">Ingrese su nombre completo</label>
+                  <input type="text" id="nameOfBuyer" class="form-control" placeholder="Nombre completo" required>
 
-            <label for="expirationOfCard">Fecha de vencimiento de la tarjeta: </label>
-            <input required type="number" min="0" id="expirationOfCard" placeholder="ddmmaa">
+                  <label for="inputAddress">Dirección principal, número de puerta</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="Calle De ejemplo 1234 apto. 5"
+                    required>
+                  <div class="invalid-feedback">Complete los campos.</div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputCity">Pais</label>
+                    <input type="text" class="form-control" id="inputCity" value="Uruguay">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputState">Departamento</label>
+                    <select id="inputState" class="form-control">
+                      <option selected>Elige...</option>
+                      <option>Montevideo</option>
+                      <option>Canelones</option>
+                      <option>Etc...</option>
+                    </select>
+                  </div>
+                </div>
+              </form>
+
+
+              <input type="radio" id="credit" value="Credito" onclick="creditForm()" name="kindOfBuy">
+              <label for="credit">Tarjeta de credito</label><br>
+              <div id="addCreditForm"></div>
+
+              <input type="radio" id="trans" value="Transaccion" onclick="transForm()" name="kindOfBuy">
+              <label for="trans">Transferencia bancaria </label>
+              <div id="addTransactionForm"></div>
+
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Volver al carrito</button>
+              <button type="button" class="btn btn-primary" id="buy" onclick=validation()>Proseguir con esta
+                compra</button>
+            </div>
+
           </div>
-
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Volver al carrito</button>
-            <button type="button" class="btn btn-primary" id="buy">Proseguir con esta compra</button>
-          </div>
-
         </div>
       </div>
+
     </div>
 
-  </div>
 
 
-
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
-  </div>
-  <script>
-    if (!localStorage.getItem("Usuario")) { // Si no hay data en el localStorage
-      window.location.href = "login.html"; //Redireccionar al login.html
-      console.log("¿Entré al if?");
-    }
-  </script>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/dropzone.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/cart.js"></script>
+    <script>
+      if (!localStorage.getItem("Usuario")) { // Si no hay data en el localStorage
+        window.location.href = "login.html"; //Redireccionar al login.html
+        console.log("¿Entré al if?");
+      }
+    </script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/dropzone.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 
 </html>
