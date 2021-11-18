@@ -91,7 +91,7 @@ function cambioAsinc(precio) {
     let unitProductCostHTML = document.getElementById("subtotal");
     let totalCostHTML = document.getElementById("total");
     let quantity = document.getElementById("cantidad");
-    let comission = document.getElementById("comissionText")
+    let comission = document.getElementById("comissionText");
 
     let costXcount = precio * quantity.value;
     let totalCostToShow = (Math.round(costXcount * comissionPercentage * 100) / 100) + costXcount;
@@ -100,7 +100,6 @@ function cambioAsinc(precio) {
     comission.innerHTML = `$U ` + comissionToShow;
     unitProductCostHTML.innerHTML = `$U ` + costXcount;
     totalCostHTML.innerHTML = `Total:` + `$U ` + totalCostToShow;
-
 
 }
 
@@ -125,7 +124,6 @@ function ValidateCreditCardNumber() {
     }
 
     if (isValid) {
-        alert("Gracias por su compra");
     } else {
         alert("Por favor, revise que los datos de su tarjeta sean correctos.");
     }
@@ -183,7 +181,6 @@ function validation() {
 
     if (!name.value) {
         alert('Por favor, corrobore haber puesto su nombre');
-        $('.alert').alert()
     }
     else if (!address.value) {
         alert('Por favor, corrobore haber puesto la dirección completa y correctamente');
