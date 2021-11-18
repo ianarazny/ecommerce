@@ -199,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 
 
-    getJSONData(CART_INFO_URL).then(
+    getJSONData("http://localhost:3000/cart").then(
         function (resultObj) {
             if (resultObj.status === "ok") {
                 carro = resultObj.data;

@@ -72,16 +72,21 @@ function sortAndShowProducts(sortCriteria, prodArray) {
     //Muestro los productos ordenados.
     showProductsList();
 }
+var requestOptions = {
+    method: 'GET',
+    redirect: 'follow'
+};
+
+fetch("http://localhost:3000/products", requestOptions)
+    .then(response => response.text())
+    .then(result => sortAndShowProducts(ORDER_ASC_BY_COST, JSON.parse(result)))
+    .catch(error => console.log('error', error));
+
+
 
 document.addEventListener("DOMContentLoaded", function (e) {
-    getJSONData(PRODUCTS_URL).then( //Accedo a la lista de productos con una petición al servidor.
-        function (resultObj) {
-            if (resultObj.status === "ok") {  //Si está todo bien entonces...
-                var productos = resultObj.data; //... le asigno a la variable productos su respectiva información, extraída del registro del url productos
-                sortAndShowProducts(ORDER_ASC_BY_COST, productos);
-            }
-        });
-    //ORDENAR
+
+    // //ORDENAR
 
 
     document.getElementById("sortAsc").addEventListener("click", function () {

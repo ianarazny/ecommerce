@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     //     const productos = await getJSONData(PRODUCTS_URL);
     // }
 
-    getJSONData(PRODUCT_INFO_URL).then(
+    getJSONData('http://localhost:3000/product_info').then(
         function (resultObj) {
             if (resultObj.status === "ok") {
                 product = resultObj.data;
