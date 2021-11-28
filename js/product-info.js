@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 showImagesGallery(product.images);
 
 
-                getJSONData(PRODUCTS_URL).then(
+                getJSONData('http://localhost:3000/products').then(
                     function (otrosProductos) {
                         if (otrosProductos.status === "ok") {
                             let arreglo = [];
@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     );
 
 
-    getJSONData(PRODUCT_INFO_COMMENTS_URL).then(
+    getJSONData('http://localhost:3000/product_info_comments').then(
         function (comentarios) {
             if (comentarios.status === "ok") {
 

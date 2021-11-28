@@ -197,8 +197,6 @@ function validation() {
 
 document.addEventListener("DOMContentLoaded", function (e) {
 
-
-
     getJSONData("http://localhost:3000/cart").then(
         function (resultObj) {
             if (resultObj.status === "ok") {
