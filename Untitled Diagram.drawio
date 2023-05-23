@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-05-23T15:09:17.416Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="jDpclEjQHTdz5KSnO8uE" version="21.3.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-05-23T15:14:02.806Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="3XBDgdDv16txgUnttmyV" version="21.3.2" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="989" dy="534" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="989" dy="494" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -51,7 +51,7 @@
         <mxCell id="YSX1xhRVIbN5Q6Pjr2tT-17" value="&amp;lt;&amp;lt;asociacion&amp;gt;&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="400" y="670" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="YSX1xhRVIbN5Q6Pjr2tT-18" value="C:&lt;u&gt;CCurso&lt;/u&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="YSX1xhRVIbN5Q6Pjr2tT-18" value="c:&lt;u&gt;Curso&lt;/u&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="474.37" y="770" width="110" height="50" as="geometry" />
         </mxCell>
         <mxCell id="YSX1xhRVIbN5Q6Pjr2tT-20" value="2*:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
